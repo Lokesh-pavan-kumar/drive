@@ -48,7 +48,7 @@ const FolderIcon = (props) => {
 
                     <p>Rename</p>
 
-                    <input value={data} type="text" onChange={event => handleChange(event)} />
+                    <input value={name} type="text" onChange={event => handleChange(event)} />
                     <input id="renameButton" type="submit" onClick={handleSubmit} value="Rename"/>
                 </Modal>                
             }
