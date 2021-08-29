@@ -3,6 +3,7 @@ import file from "../assets/file.png"
 import close from "../assets/close.png"
 import Modal from 'react-modal';
 import "./styles/Icon.css"
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 const FileIcon = (props) => {
     const data = props.data
@@ -60,15 +61,26 @@ const FileIcon = (props) => {
 
     return (  
         <Fragment>
-            <div className="icon">
-                <img className="fileImage" src={file} alt="a file" />
-                <div className="bottomLeft">
-                    {extension}
+            <ContextMenuTrigger id={data}>
+                <div className="icon">
+                    <img className="fileImage" src={file} alt="a file" />
+                    <div className="bottomLeft">
+                        {extension}
+                    </div>
+                    <p>{data}</p>
+                    {/* <div className="button renameButton" role="button" onClick={handleRename}>Rename</div>
+                    <div className="button deleteButton" role="button" onClick={handleDelete}>Delete</div> */}
                 </div>
-                <p>{data}</p>
-                <div className="button renameButton" role="button" onClick={handleRename}>Rename</div>
-                <div className="button deleteButton" role="button" onClick={handleDelete}>Delete</div>
-            </div>
+            </ContextMenuTrigger>
+
+            <ContextMenu className="contextMenu" id={data}>
+                <MenuItem className="menuItem" onClick={handleRename}>
+                    Rename
+                </MenuItem>
+                <MenuItem className="menuItem deleteMenuItem" onClick={handleDelete}>
+                    Delete
+                </MenuItem>
+            </ContextMenu>
             {
                 <Modal className="modal" isOpen = {isOpen} ariaHideApp={false}> 
                     <button className="closeIcon" onClick={() => {setIsOpen(false)}}>

@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.icon:hover {
+    cursor: pointer;
+}
+
 .icon p{
     font-size: 1vw;
 }
@@ -54,6 +58,34 @@
     background-color: red;
     color: white;
     position: absolute;
-    bottom: 90px;
-    left: 85px;
-  }
+    bottom: 40px;
+    left: 50px;
+}
+
+.contextMenu {
+    /* padding-block: 0.8rem; */
+    background-color: white;
+    text-align: start;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 0.4rem;
+}
+
+.menuItem {
+    text-align: center;
+    font-size:medium;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    /* padding-left: 0.8rem;
+    padding-right: 0.8rem; */
+}
+
+.menuItem:hover {
+    background-color: #67b6f9;
+}
+
+.deleteMenuItem {
+    color: red;
+}
+
+.deleteMenuItem:hover {
+    background-color: rgb(178, 205, 228);
+}
