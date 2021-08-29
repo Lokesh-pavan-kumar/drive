@@ -1,3 +1,5 @@
+// this component is rendered in the Manager and handles the creation of files and folders
+
 import { useEffect, useState } from "react";
 import add_new_button from "../assets/add_new_button.png"
 import close from "../assets/close.png"
@@ -8,6 +10,7 @@ const Create = (props) => {
     
     const root = props.root
 
+    // for force rendering
     const count = props.count, setCount = props.setCount
     const refresh = props.refresh, setRefresh = props.setRefresh
 
@@ -27,11 +30,12 @@ const Create = (props) => {
         setName(event.target.value)
     }
 
+    // error checking for duplicate files and folders
     useEffect(() => {
-        if (createFolder && root.hasOwnProperty(name)){
+        if (createFolder && root.hasOwnProperty(name)){ // for duplicate folders
             setError("folder name exists")
         }
-        else if (!createFolder && root['files'].includes(name)){
+        else if (!createFolder && root['files'].includes(name)){ // for duplicate files
             setError("file name exists")
         }
         else {
@@ -39,6 +43,8 @@ const Create = (props) => {
         }
     }, [name, createFolder, root])
 
+    // the next two useeffects are speifically for forced rendering
+    // all the components use the same hooks
     useEffect(() => {
 		if(refresh === 0){
 			setRefresh(1);

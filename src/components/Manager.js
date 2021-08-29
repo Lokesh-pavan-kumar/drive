@@ -1,3 +1,5 @@
+// this component has the html for all the files (file manager)
+
 import { Fragment, useState } from "react";
 import FolderIcon from "./FolderIcon.js";
 import FileIcon from "./FileIcon.js";
@@ -9,12 +11,14 @@ const Manager = (props) => {
     const setRoot = props.setRoot
     const history = props.history
 
-    const [count, setCount] = useState(1)
+    // count and refresh states are used for custom re-renders used for custom re-render
+    // count also stores the total number of forced renders
+    const [count, setCount] = useState(1) 
     const [refresh, setRefresh] = useState(1)
 
     const handleClick = (item) => {
-        setRoot(root[item])
-        history.push(root[item])
+        setRoot(root[item]) // this forces a render
+        history.push(root[item]) // to track the path
     }
 
     return (

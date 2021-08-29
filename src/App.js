@@ -4,22 +4,22 @@ import Header from './components/Header';
 import Manager from './components/Manager';
 
 function App() {
+
+  // the commented part depicts an example structure
+  // js object (hash table) is used to store folders
+  // a list in a folder holds the files in it
   const root = {
     // Apps: {
     //   InsideApps: {
     //     files: []
     //   },
-    //   files: ["Portfolio.pdf", "Document.docx"]
-    // },
-    // Pictures: {
     //   files: []
     // },
-    // files: ["original.pdf"],
     files: []
   }
 
-  const [history, setHistory] = useState([root])
-  const [rootLevel, setRootLevel] = useState(root)
+  const [history, setHistory] = useState([root]) // a stack to track the path
+  const [rootLevel, setRootLevel] = useState(root) // stores the level in rootLevel
 
   return (
     <div className="App">

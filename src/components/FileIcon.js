@@ -1,3 +1,7 @@
+// this renders and has all the operations for the files
+// delete and rename
+// can be made more modular
+
 import { Fragment, useEffect, useState } from "react"
 import file from "../assets/file.png"
 import close from "../assets/close.png"
@@ -8,13 +12,15 @@ import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 const FileIcon = (props) => {
     const data = props.data
     const root = props.root
+
+    //for force rendering (count and setCount)
     const count = props.count
-    const setCount = props.setCount
+    const setCount = props.setCount 
 
     const [isOpen, setIsOpen] = useState(false)
-    const [name, setName] = useState(data)
+    const [name, setName] = useState(data) // temporary for the rename functionality
 
-    const [error, setError] = useState('')
+    const [error, setError] = useState('') // stores the error, is displayed if an error occurs (custom)
 
     const handleDelete = () => {
         let index = root.files.indexOf(data)
@@ -22,6 +28,7 @@ const FileIcon = (props) => {
         setCount(count + 1)
     }
 
+    // used for error checking in the rename functionality
     useEffect(() => {
         if (name.length > 0) {
             if (root['files'].includes(name)) {
@@ -37,8 +44,8 @@ const FileIcon = (props) => {
     }, [name, root])
 
     const handleRename = () => {
-        setIsOpen(true)
-        setError('')
+        setIsOpen(true) // opens the modal 
+        setError('') // the error is set to an empty string, previous error is removed
     }
 
     const handleChange = (event) => setName(event.target.value)
@@ -50,7 +57,7 @@ const FileIcon = (props) => {
         setIsOpen(false)
     }
 
-    let extension = null
+    let extension = null // the extension of the file is stores in this
 
     if (data.match(/\.[0-9a-z]+$/i)) {
         extension = data.match(/\.[0-9a-z]+$/i)[0]
