@@ -58,8 +58,6 @@ const FolderIcon = (props) => {
                 <div className="icon">
                     <img src={folder} alt="a folder" />
                     <p>{data}</p>
-                    {/* <div className="button renameButton" role="button" onClick={handleRename}>Rename</div>
-                    <div className="button deleteButton" role="button" onClick={handleDelete}>Delete</div> */}
                 </div>
             </ContextMenuTrigger>
 

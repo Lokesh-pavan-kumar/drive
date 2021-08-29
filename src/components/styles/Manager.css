@@ -35,11 +35,6 @@ input {
     border: 1px solid #67b6f9;
 }
 
-.selected {
-    color: white;
-    background-color: #67b6f9;
-}
-
 .errorMessage {
     color: red;
 }
@@ -75,7 +70,7 @@ input {
 }
 
 .modal button:hover{
-    border-radius: 2vw;
+    /* border-radius: 2vw; */
     background-color: rgb(235, 168, 168);
 }
 
@@ -91,14 +86,15 @@ input {
     background-color: #67b6f9;
 }
 
+
 .fileButton {
     font-size: large;
-    border-radius: 0.5vw 0 0 0.5vw;
+    border-radius: 0.8vw 0 0 0.8vw;
 }
 
 .folderButton {
     font-size: large;
-    border-radius: 0 0.5vw 0.5vw 0;
+    border-radius: 0 0.8vw 0.8vw 0;
 }
 
 #createButton {
@@ -108,4 +104,19 @@ input {
     background-color: #67b6f9;
     border-radius: 0.5vh;
     border: 1px solid #67b6f9;
+}
+
+.selected {
+    color: white;
+    background-color: #67b6f9;
+}
+
+.fileButton:hover {
+    font-size: large;
+    border-radius: 0.8vw 0 0 0.8vw;
+}
+
+.folderButton:hover {
+    font-size: large;
+    border-radius: 0 0.8vw 0.8vw 0;
 }
