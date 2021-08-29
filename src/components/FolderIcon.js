@@ -17,11 +17,16 @@ const FolderIcon = (props) => {
     const [error, setError] = useState('')
 
     useEffect(() => {
-        if (root.hasOwnProperty(name)){
-            setError("folder name exists")
+        if (name.length > 0) {
+            if (root.hasOwnProperty(name)){
+                setError("folder name exists")
+            }
+            else {
+                setError('')
+            }
         }
         else {
-            setError('')
+            setError('enter a name')
         }
     }, [name, root])
 

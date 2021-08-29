@@ -22,11 +22,16 @@ const FileIcon = (props) => {
     }
 
     useEffect(() => {
-        if (root['files'].includes(name)) {
-            setError('file name exists')
+        if (name.length > 0) {
+            if (root['files'].includes(name)) {
+                setError('file name exists')
+            }
+            else {
+                setError('')
+            }
         }
         else {
-            setError('')
+            setError('enter a name')
         }
     }, [name, root])
 
