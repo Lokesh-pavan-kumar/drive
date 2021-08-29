@@ -12,7 +12,7 @@ const FolderIcon = (props) => {
     const setCount = props.setCount
 
     const [isOpen, setIsOpen] = useState(false)
-    const [name, setName] = useState('')
+    const [name, setName] = useState(data)
 
     const handleDelete = () => {
         delete root[data]
