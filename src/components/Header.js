@@ -2,15 +2,16 @@ import "./styles/Header.css"
 import arrow from "../assets/arrow_up.png"
 
 const Header = (props) => {
-    // const root = props.root
     const setRoot = props.setRoot
     const history = props.history
-    // const setHistory = props.setHistory
 
     const handleClick = () => {
         if (history.length >= 2) {
             setRoot(history[history.length - 2])
             history.pop()
+        }
+        else {
+            alert("You are in the root directory, cannot go any further back.")
         }
     }
 

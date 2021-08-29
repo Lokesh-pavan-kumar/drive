@@ -1,29 +1,59 @@
 
 .icon {
+    position: relative;
     margin: 5vh 5vw 5vh 5vw;
     text-align: center;
+}
+
+.icon p{
+    font-size: 1vw;
 }
 
 .fileImage {
     width: 60px;
 }
 
-.icon button:hover {
-    background-color: brown;
-    border: 1px solid black;
-}
-
-.icon button {
-    border: 1px solid black;
-}
-
 .button {
+    font-size: 1vw;
     display: inline;
-    padding: 2px 2px 2px 2px;
-    border: 1px solid black;
+    border-radius: 1vw;
+    padding: 5px 5px 5px 5px;
 }
 
 .button:hover {
-    background-color: brown;
-    border: 1px solid black;
+    cursor: pointer;
 }
+
+.renameButton {
+    border: 1px solid black;
+    margin-right: 2px;
+}
+
+.deleteButton {
+    border: 1px solid rgb(228, 148, 148);
+    background-color: rgb(228, 148, 148);
+    border-radius: rgb(228, 148, 148);
+    padding: 5px 12px 5px 12px;
+    margin-left: 2px;
+}
+
+#renameButton {
+    cursor: pointer;
+    font-size: large;
+    color: white;
+    background-color: #67b6f9;
+    border-radius: 0.5vh;
+    border: 1px solid #67b6f9;
+}
+
+.bottomLeft {
+    border-radius: 2vw;
+    padding: 0.2vh 0.5vw 0.2vh 0.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    background-color: red;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+    left: 85px;
+  }

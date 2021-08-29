@@ -1,20 +1,22 @@
 import { Fragment, useState } from "react"
 import folder from "../assets/folder.png"
-import "./styles/Icon.css"
 import close from "../assets/close.png"
 import Modal from 'react-modal';
+import "./styles/Icon.css"
 
 const FolderIcon = (props) => {
     const data = props.data
     const root = props.root
-    const setRoot = props.setRoot
+    
+    const count = props.count
+    const setCount = props.setCount
 
     const [isOpen, setIsOpen] = useState(false)
     const [name, setName] = useState('')
 
     const handleDelete = () => {
         delete root[data]
-        setRoot({...root})
+        setCount(count + 1)
     }
 
     const handleRename = () => {
@@ -26,33 +28,31 @@ const FolderIcon = (props) => {
     const handleSubmit = () => {
         root[name] = root[data]
         delete root[data]
-        setRoot({...root})
+        setCount(count + 1)
         setIsOpen(false)
     }
-
 
     return (
         <Fragment>
             <div className="icon">
                 <img src={folder} alt="a folder" />
                 <p>{data}</p>
-                <div className="button" role="button" onClick={handleRename}>Rename</div>
-                <div className="button" role="button" onClick={handleDelete}>Delete</div>
+                <div className="button renameButton" role="button" onClick={handleRename}>Rename</div>
+                <div className="button deleteButton" role="button" onClick={handleDelete}>Delete</div>
             </div>
             {
                 <Modal className="modal" isOpen = {isOpen} ariaHideApp={false}> 
-                    <button onClick={() => {setIsOpen(false)}}>
+                    <button className="closeIcon" onClick={() => {setIsOpen(false)}}>
                         <img src={close} alt="close button" />
                     </button>
 
                     <p>Rename</p>
 
-                    <input type="text" onChange={event => handleChange(event)} />
-                    <input type="submit" onClick={handleSubmit}/>
+                    <input value={data} type="text" onChange={event => handleChange(event)} />
+                    <input id="renameButton" type="submit" onClick={handleSubmit} value="Rename"/>
                 </Modal>                
             }
         </Fragment> 
-
     );
 }
 
