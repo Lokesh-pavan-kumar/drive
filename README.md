@@ -1,3 +1,20 @@
+# Data Structure:
+JS object (hash table) is used to store folders and a list in a folder holds the files in it.
+
+An example structure : 
+  const root = {
+    Apps: {
+       InsideApps: {
+         files: []
+       },
+       files: []
+    },
+    files: []
+  }
+
+Folders Search: (O(1))
+Files Search: (O(n)). n is the length of the number of files
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

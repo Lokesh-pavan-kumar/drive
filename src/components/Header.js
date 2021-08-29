@@ -7,8 +7,8 @@ const Header = (props) => {
 
     const handleClick = () => {
         if (history.length >= 2) {
-            setRoot(history[history.length - 2])
-            history.pop()
+            setRoot(history[history.length - 2]) // the level where we have to return is before the last level
+            history.pop() // removes the top from the stack
         }
         else {
             alert("You are in the root directory, cannot go any further back.")

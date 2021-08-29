@@ -1,3 +1,7 @@
+// this renders and has all the operations for the folders
+// delete and rename
+// can be made more modular
+
 import { Fragment, useEffect, useState } from "react"
 import folder from "../assets/folder.png"
 import close from "../assets/close.png"
