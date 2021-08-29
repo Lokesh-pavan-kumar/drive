@@ -19,6 +19,7 @@ const Create = (props) => {
     const openModal = () => {
         setIsOpen(true)
         setError('')
+        setName('')
     }
     const closeModal = () => setIsOpen(false)
 
