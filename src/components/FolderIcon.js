@@ -33,14 +33,14 @@ const FolderIcon = (props) => {
     const handleRename = () => {
         setIsOpen(true)
         setError('')
-        // setName('')
     }
 
     const handleChange = (event) => setName(event.target.value)
 
     const handleSubmit = () => {
-        root[name] = root[data]
+        let temp = root[data]
         delete root[data]
+        root[name] = temp
         setCount(count + 1)
         setIsOpen(false)
     }
@@ -66,7 +66,7 @@ const FolderIcon = (props) => {
                     {
                         (error.length > 0) ? 
                             <p className="errorMessage">{error}</p> 
-                        : 
+                        :
                         <input id="renameButton" type="submit" onClick={handleSubmit} value="Rename"/> 
                     }
                 </Modal>                
