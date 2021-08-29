@@ -1,0 +1,16 @@
+
+.header p {
+    text-align: left;
+    margin-left: 1vw;
+}
+
+.header hr {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    opacity: 0.3;
+}
+
+.header img{
+    margin-left: 2vw;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,29 @@
+
+.icon {
+    margin: 5vh 5vw 5vh 5vw;
+    text-align: center;
+}
+
+.fileImage {
+    width: 60px;
+}
+
+.icon button:hover {
+    background-color: brown;
+    border: 1px solid black;
+}
+
+.icon button {
+    border: 1px solid black;
+}
+
+.button {
+    display: inline;
+    padding: 2px 2px 2px 2px;
+    border: 1px solid black;
+}
+
+.button:hover {
+    background-color: brown;
+    border: 1px solid black;
+}

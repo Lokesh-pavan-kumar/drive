@@ -1,0 +1,35 @@
+button {
+    border: none;
+    background-color: white;
+}
+
+.allFiles {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal {
+    text-align: center;
+    background-color: white;
+    margin: auto;
+    margin-top: 10%;
+    width: 30%;
+    height: 40%;
+    border: 1px solid black;
+}
+
+.modal img {
+    width: 30%;
+}
+
+button:hover {
+    border: none;
+    border-radius: 5%;
+    background-color:rgb(221, 235, 230);
+}
+
+input {
+    margin: auto;
+    display: block;
+}
