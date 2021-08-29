@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import folder from "../assets/folder.png"
 import close from "../assets/close.png"
 import Modal from 'react-modal';
@@ -7,12 +7,23 @@ import "./styles/Icon.css"
 const FolderIcon = (props) => {
     const data = props.data
     const root = props.root
-    
+
     const count = props.count
     const setCount = props.setCount
 
     const [isOpen, setIsOpen] = useState(false)
     const [name, setName] = useState(data)
+
+    const [error, setError] = useState('')
+
+    useEffect(() => {
+        if (root.hasOwnProperty(name)){
+            setError("folder name exists")
+        }
+        else {
+            setError('')
+        }
+    }, [name, root])
 
     const handleDelete = () => {
         delete root[data]
@@ -21,6 +32,8 @@ const FolderIcon = (props) => {
 
     const handleRename = () => {
         setIsOpen(true)
+        setError('')
+        // setName('')
     }
 
     const handleChange = (event) => setName(event.target.value)
@@ -49,7 +62,13 @@ const FolderIcon = (props) => {
                     <p>Rename</p>
 
                     <input value={name} type="text" onChange={event => handleChange(event)} />
-                    <input id="renameButton" type="submit" onClick={handleSubmit} value="Rename"/>
+
+                    {
+                        (error.length > 0) ? 
+                            <p className="errorMessage">{error}</p> 
+                        : 
+                        <input id="renameButton" type="submit" onClick={handleSubmit} value="Rename"/> 
+                    }
                 </Modal>                
             }
         </Fragment> 

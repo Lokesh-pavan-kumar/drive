@@ -33,6 +33,7 @@ const FileIcon = (props) => {
     const handleRename = () => {
         setIsOpen(true)
         setError('')
+        // setName('')
     }
 
     const handleChange = (event) => setName(event.target.value)
